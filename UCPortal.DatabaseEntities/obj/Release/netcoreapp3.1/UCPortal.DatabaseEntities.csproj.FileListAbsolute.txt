@@ -1,0 +1,12 @@
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\bin\Release\netcoreapp3.1\UCPortal.DatabaseEntities.deps.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\bin\Release\netcoreapp3.1\UCPortal.DatabaseEntities.runtimeconfig.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\bin\Release\netcoreapp3.1\UCPortal.DatabaseEntities.runtimeconfig.dev.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\bin\Release\netcoreapp3.1\UCPortal.DatabaseEntities.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\bin\Release\netcoreapp3.1\UCPortal.DatabaseEntities.pdb
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.csprojAssemblyReference.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.AssemblyInfoInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.AssemblyInfo.cs
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.csproj.CoreCompileInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.pdb
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DatabaseEntities\obj\Release\netcoreapp3.1\UCPortal.DatabaseEntities.genruntimeconfig.cache

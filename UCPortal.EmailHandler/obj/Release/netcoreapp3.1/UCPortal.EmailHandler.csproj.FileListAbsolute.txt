@@ -1,0 +1,9 @@
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\bin\Release\netcoreapp3.1\UCPortal.EmailHandler.deps.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\bin\Release\netcoreapp3.1\UCPortal.EmailHandler.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\bin\Release\netcoreapp3.1\UCPortal.EmailHandler.pdb
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.csprojAssemblyReference.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.AssemblyInfoInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.AssemblyInfo.cs
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.csproj.CoreCompileInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.EmailHandler\obj\Release\netcoreapp3.1\UCPortal.EmailHandler.pdb

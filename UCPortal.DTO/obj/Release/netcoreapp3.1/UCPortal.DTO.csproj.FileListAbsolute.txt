@@ -1,0 +1,9 @@
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\bin\Release\netcoreapp3.1\UCPortal.DTO.deps.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\bin\Release\netcoreapp3.1\UCPortal.DTO.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\bin\Release\netcoreapp3.1\UCPortal.DTO.pdb
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.csprojAssemblyReference.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.AssemblyInfoInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.AssemblyInfo.cs
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.DTO\obj\Release\netcoreapp3.1\UCPortal.DTO.pdb

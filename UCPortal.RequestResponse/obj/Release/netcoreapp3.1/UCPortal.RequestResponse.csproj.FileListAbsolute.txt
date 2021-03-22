@@ -1,0 +1,9 @@
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\bin\Release\netcoreapp3.1\UCPortal.RequestResponse.deps.json
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\bin\Release\netcoreapp3.1\UCPortal.RequestResponse.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\bin\Release\netcoreapp3.1\UCPortal.RequestResponse.pdb
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.csprojAssemblyReference.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.AssemblyInfoInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.AssemblyInfo.cs
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.csproj.CoreCompileInputs.cache
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.dll
+C:\Users\Developer\Desktop\Capstone\studentevaluation-back-end\UCPortal.RequestResponse\obj\Release\netcoreapp3.1\UCPortal.RequestResponse.pdb

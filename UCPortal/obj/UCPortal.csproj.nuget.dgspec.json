@@ -1,0 +1,430 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "projectName": "UCPortal.BusinessLogic",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
+              },
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj"
+              },
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj"
+              },
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "projectName": "UCPortal.DatabaseEntities",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "projectName": "UCPortal.DTO",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "projectName": "UCPortal.EmailHandler",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "projectName": "UCPortal.RequestResponse",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj",
+        "projectName": "UCPortal",
+        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj",
+        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj"
+              },
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
+              },
+              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
