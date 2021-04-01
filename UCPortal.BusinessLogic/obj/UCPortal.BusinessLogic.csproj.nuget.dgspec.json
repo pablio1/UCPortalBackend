@@ -1,44 +1,47 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {}
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
         "projectName": "UCPortal.BusinessLogic",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
-                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
+              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
               },
-              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
-                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj"
+              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj"
               },
-              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
-                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj"
+              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj"
               },
-              "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
-                "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
+              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
               }
             }
           }
@@ -73,28 +76,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
         "projectName": "UCPortal.DatabaseEntities",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -143,28 +149,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
         "projectName": "UCPortal.DTO",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DTO\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -203,28 +212,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
         "projectName": "UCPortal.EmailHandler",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.EmailHandler\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -267,28 +279,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
         "projectName": "UCPortal.RequestResponse",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.RequestResponse\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -327,7 +342,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

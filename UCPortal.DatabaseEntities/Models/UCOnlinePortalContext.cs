@@ -42,13 +42,9 @@ namespace UCPortal.DatabaseEntities.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-<<<<<<< HEAD
-            
+            {  
                 optionsBuilder.UseSqlServer("Server=ADMIN-PC\\SQLEXPRESS;Database=UCOnlinePortal;Trusted_Connection=True;");
-=======
-                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=UCOnlinePortal;Trusted_Connection=True;");
->>>>>>> 49a508f9b7e58cdc735872f7260f5b25edfe929f
+
             }
         }
 

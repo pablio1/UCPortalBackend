@@ -3970,23 +3970,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                                 department = course.Department,
                                 enrollment_open = course.EnrollmentOpen
                             }).ToList();
-            var subjects = (from subject in _ucOnlinePortalContext.SubjectInfos
-                            select new GetAllCurriculumResponse.Subjects
-                            {
-                                internal_code = subject.InternalCode,
-                                subject_name = subject.SubjectName,
-                                subject_type = subject.SubjectType,
-                                descr_1 = subject.Descr1,
-                                descr_2 = subject.Descr2,
-                                units = Convert.ToString(subject.Units),
-                                semester = Convert.ToString(subject.Semester),
-                                course_code = subject.CourseCode,
-                                year_level = Convert.ToString(subject.YearLevel),
-                                split_type = subject.SplitType,
-                                split_code = subject.SplitCode,
-                                //curriculim_year = subject.CurriculumYear
-                               
-                            }).ToList();
+            
 
             var departments = (from department in _ucOnlinePortalContext.CourseLists
                             select new GetAllCurriculumResponse.Departments
@@ -3996,9 +3980,52 @@ namespace UCPortal.BusinessLogic.Enrollment
                                 department = department.Department
                             }).Distinct().ToList();
 
+            var latest_cur = _ucOnlinePortalContext.Curricula.Max(x=> x.Year);
 
             //var group_departments = departments
-            return new GetAllCurriculumResponse { year = year, courses = courses,  subjects = subjects, departments = departments};
+            return new GetAllCurriculumResponse { year = year, courses = courses, departments = departments,current_curriculum=latest_cur};
+        }
+
+        public GetCourseInfoResponse GetCourseInfo(GetCourseInfoRequest getRequest)
+        {
+            if (getRequest == null)
+            {
+                return new GetCourseInfoResponse { };
+            }
+            if (getRequest.department != null)
+            { 
+                 var filteredCourseList = (from subject in _ucOnlinePortalContext.SubjectInfos
+                                  join course in _ucOnlinePortalContext.CourseLists
+                                  on subject.CourseCode equals course.CourseCode
+                                  where (course.CourseDepartmentAbbr == getRequest.department && subject.CurriculumYear == getRequest.curr_year)
+                                  select new GetCourseInfoResponse.Courses
+                                  {
+                                      course_code = subject.CourseCode,
+                                      course_description = course.CourseDescription,
+                                      course_abbr = course.CourseAbbr,
+                                      year_limit = course.CourseYearLimit,
+                                      course_department = course.CourseDepartment,
+                                      course_department_abbr = course.CourseDepartmentAbbr
+                                  }).Distinct().ToList();
+
+                return new GetCourseInfoResponse { courses = filteredCourseList };
+            }
+
+            var getCourseList = (from subject in _ucOnlinePortalContext.SubjectInfos
+                             join course in _ucOnlinePortalContext.CourseLists
+                             on subject.CourseCode equals course.CourseCode
+                             where (subject.CurriculumYear == getRequest.curr_year)
+                             select new GetCourseInfoResponse.Courses
+                             {
+                                 course_code = subject.CourseCode,
+                                 course_description = course.CourseDescription,
+                                 course_abbr = course.CourseAbbr,
+                                 year_limit = course.CourseYearLimit,
+                                 course_department = course.CourseDepartment,
+                                 course_department_abbr = course.CourseDepartmentAbbr
+                             }).Distinct().ToList();
+
+            return new GetCourseInfoResponse { courses = getCourseList };
         }
     }
 }

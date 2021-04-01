@@ -1,27 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {}
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
         "projectName": "UCPortal.DatabaseEntities",
-        "projectPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
-        "packagesPath": "C:\\Users\\Edraline A. Villarba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edraline A. Villarba\\Documents\\Capstone42\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
+        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edraline A. Villarba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

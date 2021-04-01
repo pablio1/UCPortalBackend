@@ -1248,7 +1248,7 @@ namespace UCPortal.Controllers
         }
 
         [HttpPost]
-        [Route("student/allcurriculum")]
+        [Route("allcurriculum")]
         public async Task<IActionResult> GetAllCurriclum()
         {
            
@@ -1270,13 +1270,7 @@ namespace UCPortal.Controllers
                 return cCourse;
 
             }).ToList();
-            var getSubjects = result.subjects.Select(x =>
-            {
-                var rSubjects = Newtonsoft.Json.JsonConvert.SerializeObject(x);
-                var cSubjects = Newtonsoft.Json.JsonConvert.DeserializeObject<GetAllCurriculumResponse.Subjects>(rSubjects);
-                return cSubjects;
-
-            }).ToList();
+           
             var getDepartments = result.departments.Select(x =>
             {
                 var rCourse = Newtonsoft.Json.JsonConvert.SerializeObject(x);
@@ -1284,7 +1278,30 @@ namespace UCPortal.Controllers
                 return cCourse;
 
             }).ToList();
-            return Ok(new GetAllCurriculumResponse { year = getYears, course = getCourses,  subjects = getSubjects,departments = getDepartments});
+            return Ok(new GetAllCurriculumResponse { year = getYears, course = getCourses,departments = getDepartments, current_curriculum = result.current_curriculum});
+            
+        }
+
+        [HttpPost]
+        [Route("courselist")]
+        public async Task<IActionResult> CourseList([FromBody] GetCourseInfoRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.GetCourseInfoRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.GetCourseInfo(converted_req));
+
+            var getCourseList = result.courses.Select(x =>
+            {
+                var rCourse = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cCourse = Newtonsoft.Json.JsonConvert.DeserializeObject<GetCourseInfoResponse.Courses>(rCourse);
+                return cCourse;
+
+            }).ToList();
+
+            return Ok(new GetCourseInfoResponse {courses = getCourseList});
         }
     }
 }
