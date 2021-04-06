@@ -60,5 +60,8 @@ namespace UCPortal.BusinessLogic.Enrollment
         CancelSubjectReqResponse CancelSubjectRequest(CancelSubjectReqRequest getRequest);
         GetAllCurriculumResponse GetAllCurriculum();
         GetCourseInfoResponse GetCourseInfo(GetCourseInfoRequest getRequest);
+        AddCurriculumResponse AddCurriculum(AddCurriculumRequest getRequest);
+        CloseCurriculumReponse CloseCurriculum(CloseCurriculumRequest getRequest);
+        GetSubjectInfoResponse GetSubjectInfo(GetSubjectInfoRequest getRequest);
     }
 }

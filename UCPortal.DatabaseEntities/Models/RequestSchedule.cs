@@ -13,10 +13,10 @@ namespace UCPortal.DatabaseEntities.Models
         public string TimeEnd { get; set; }
         public string Mdn { get; set; }
         public string Days { get; set; }
-        public int Rtype { get; set; }
+        public int? Rtype { get; set; }
         public string MTimeStart { get; set; }
         public string MTimeEnd { get; set; }
-        public int Status { get; set; }
+        public int? Status { get; set; }
         public string InternalCode { get; set; }
         public int? Size { get; set; }
         public string SplitType { get; set; }

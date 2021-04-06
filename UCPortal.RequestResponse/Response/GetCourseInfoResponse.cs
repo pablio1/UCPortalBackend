@@ -7,7 +7,6 @@ namespace UCPortal.RequestResponse.Response
     public class GetCourseInfoResponse
     {
         public List<Courses> courses { get; set; }
-
         public class Courses
         { 
             public string course_code { get; set; }

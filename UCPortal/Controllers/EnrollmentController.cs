@@ -51,7 +51,7 @@ namespace UCPortal.Controllers
 
             //return login reponse
             return Ok(new RegistrationResponse { success = result.success });
-        }     
+        }
 
         /*
         * Endpoint for getting the Department
@@ -240,9 +240,9 @@ namespace UCPortal.Controllers
             var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.UpdateSubjectRequest>(serialized_req);
 
             //await result from function ChangePassword
-            var result = await Task.FromResult(_enrollmentManagement.UpdateSubject(converted_req));           
+            var result = await Task.FromResult(_enrollmentManagement.UpdateSubject(converted_req));
 
-            return Ok(new UpdateSubjectResponse { success = result.success});
+            return Ok(new UpdateSubjectResponse { success = result.success });
         }
 
         /*
@@ -422,7 +422,7 @@ namespace UCPortal.Controllers
                 return cSched;
             }).ToList();
 
-            return Ok(new GetStudentStatusResponse { status = response, classification = result.classification, is_cancelled = result.is_cancelled, needed_payment = result.needed_payment, pending_promissory = result.pending_promissory, promi_pay = result.promi_pay,  adjustment_open = result.adjustment_open, enrollment_open = result.enrollment_open});
+            return Ok(new GetStudentStatusResponse { status = response, classification = result.classification, is_cancelled = result.is_cancelled, needed_payment = result.needed_payment, pending_promissory = result.pending_promissory, promi_pay = result.promi_pay, adjustment_open = result.adjustment_open, enrollment_open = result.enrollment_open });
         }
 
         /*
@@ -791,7 +791,7 @@ namespace UCPortal.Controllers
             //Check if required fields are present
             if (!ModelState.IsValid)
             {
-                return Ok(new ViewStudentEvaluationResponse { studentGrades = null});
+                return Ok(new ViewStudentEvaluationResponse { studentGrades = null });
             }
 
             //Convert response object to DTO Objects
@@ -905,7 +905,7 @@ namespace UCPortal.Controllers
                 return cSched;
             }).ToList();
 
-            return Ok(new GetEnrollmentStatusResponse { courseStat = response});
+            return Ok(new GetEnrollmentStatusResponse { courseStat = response });
         }
 
         /*
@@ -961,7 +961,7 @@ namespace UCPortal.Controllers
             var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
             var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.SaveTeachersLoadRequest>(serialized_req);
 
-            var result = await Task.FromResult(_enrollmentManagement.SaveTeachersLoad(converted_req));;
+            var result = await Task.FromResult(_enrollmentManagement.SaveTeachersLoad(converted_req)); ;
 
             return Ok(new SaveTeachersLoadResponse { success = result.success });
         }
@@ -1005,7 +1005,7 @@ namespace UCPortal.Controllers
         [HttpPost]
         [Route("tools/cleanseostsp")]
         public async Task<IActionResult> REmoveDuplicateOstsp()
-        {          
+        {
             var result = await Task.FromResult(_enrollmentManagement.RemoveDuplicateOstsp());
 
             return Ok(new RemoveDuplicateOtspResponse { success = result.success });
@@ -1128,12 +1128,12 @@ namespace UCPortal.Controllers
                 return cSched;
             }).ToList();
 
-            var remark = result.prerequisites.Select( x =>
-            {
-                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
-                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetCurriculumResponse.Prerequisites>(rSched);
-                return cSched;
-            }).ToList();
+            var remark = result.prerequisites.Select(x =>
+           {
+               var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+               var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetCurriculumResponse.Prerequisites>(rSched);
+               return cSched;
+           }).ToList();
 
             var grades = result.grades.Select(x =>
             {
@@ -1149,7 +1149,7 @@ namespace UCPortal.Controllers
                 return cSchedule;
             }).ToList();
 
-            return Ok(new GetCurriculumResponse {subjects = response, course_code = result.course_code, prerequisites = remark, grades = grades, schedules = schedules,units = result.units});
+            return Ok(new GetCurriculumResponse { subjects = response, course_code = result.course_code, prerequisites = remark, grades = grades, schedules = schedules, units = result.units });
         }
         [HttpPost]
         [Route("student/requestsubject")]
@@ -1164,8 +1164,8 @@ namespace UCPortal.Controllers
 
             // convert DTO to response
             // convert DTO to response
-            
-            return Ok(new StudentSubjectResponse { success=result.success });
+
+            return Ok(new StudentSubjectResponse { success = result.success });
         }
 
         [HttpPost]
@@ -1216,7 +1216,7 @@ namespace UCPortal.Controllers
             }).ToList();
             // convert DTO to response
 
-            return Ok(new GetStudentReqResponse { request = requestSubjects, filtered= filteredSubjects});
+            return Ok(new GetStudentReqResponse { request = requestSubjects, filtered = filteredSubjects });
         }
 
         [HttpPost]
@@ -1230,7 +1230,7 @@ namespace UCPortal.Controllers
             //await result from function ChangePassword
             var result = await Task.FromResult(_enrollmentManagement.AddSubjectRequest(converted_req));
 
-            return Ok(new AddStudentReqResponse { success= result.success });
+            return Ok(new AddStudentReqResponse { success = result.success });
         }
 
         [HttpPost]
@@ -1251,7 +1251,7 @@ namespace UCPortal.Controllers
         [Route("allcurriculum")]
         public async Task<IActionResult> GetAllCurriclum()
         {
-           
+
             //await result from function ChangePassword
             var result = await Task.FromResult(_enrollmentManagement.GetAllCurriculum());
 
@@ -1270,7 +1270,7 @@ namespace UCPortal.Controllers
                 return cCourse;
 
             }).ToList();
-           
+
             var getDepartments = result.departments.Select(x =>
             {
                 var rCourse = Newtonsoft.Json.JsonConvert.SerializeObject(x);
@@ -1278,8 +1278,8 @@ namespace UCPortal.Controllers
                 return cCourse;
 
             }).ToList();
-            return Ok(new GetAllCurriculumResponse { year = getYears, course = getCourses,departments = getDepartments, current_curriculum = result.current_curriculum});
-            
+            return Ok(new GetAllCurriculumResponse { year = getYears, course = getCourses, departments = getDepartments, current_curriculum = result.current_curriculum });
+
         }
 
         [HttpPost]
@@ -1301,7 +1301,56 @@ namespace UCPortal.Controllers
 
             }).ToList();
 
-            return Ok(new GetCourseInfoResponse {courses = getCourseList});
+            return Ok(new GetCourseInfoResponse { courses = getCourseList });
+        }
+
+        [HttpPost]
+        [Route("savecurriculum")]
+        public async Task<IActionResult> SaveCurriculum([FromBody] AddCurriculumRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.AddCurriculumRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.AddCurriculum(converted_req));
+
+
+            return Ok(new AddCurriculumResponse { success = result.success });
+        }
+
+        [HttpPost]
+        [Route("closecurriculum")]
+        public async Task<IActionResult> CloseCurriculum([FromBody] CloseCurriculumRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.CloseCurriculumRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.CloseCurriculum(converted_req));
+            return Ok(new CloseCurriculumResponse { success = result.success });
+        }
+
+        [HttpPost]
+        [Route("getsubjectinfo")]
+        public async Task<IActionResult> GetSubjectInfo([FromBody] GetSubjectInfoRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.GetSubjectInfoRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.GetSubjectInfo(converted_req));
+
+            var subjects = result.subjects.Select(x =>
+            {
+                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Subjects>(rSched);
+                return cSched;
+            }).ToList();
+
+            return Ok(new GetSubjectInfoResponse { subjects = subjects });
         }
     }
 }

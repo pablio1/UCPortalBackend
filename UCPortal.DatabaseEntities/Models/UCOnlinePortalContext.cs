@@ -42,9 +42,8 @@ namespace UCPortal.DatabaseEntities.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {  
+            {
                 optionsBuilder.UseSqlServer("Server=ADMIN-PC\\SQLEXPRESS;Database=UCOnlinePortal;Trusted_Connection=True;");
-
             }
         }
 
@@ -126,13 +125,11 @@ namespace UCPortal.DatabaseEntities.Models
 
             modelBuilder.Entity<Curriculum>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.CurrId);
 
                 entity.ToTable("curriculum");
 
-                entity.Property(e => e.CurrId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("curr_id");
+                entity.Property(e => e.CurrId).HasColumnName("curr_id");
 
                 entity.Property(e => e.IsDeployed).HasColumnName("isDeployed");
 
@@ -196,6 +193,8 @@ namespace UCPortal.DatabaseEntities.Models
                     .HasMaxLength(10)
                     .IsUnicode(false)
                     .HasColumnName("course_code");
+
+                entity.Property(e => e.CurrYear).HasColumnName("curr_year");
 
                 entity.Property(e => e.Dept)
                     .HasMaxLength(10)

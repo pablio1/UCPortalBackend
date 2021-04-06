@@ -8,7 +8,7 @@ namespace UCPortal.DatabaseEntities.Models
     public partial class Curriculum
     {
         public int CurrId { get; set; }
-        public int Year { get; set; }
-        public int IsDeployed { get; set; }
+        public short? Year { get; set; }
+        public short? IsDeployed { get; set; }
     }
 }

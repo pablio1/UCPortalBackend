@@ -22,6 +22,7 @@ namespace UCPortal.BusinessLogic.Enrollment
     {
         private UCOnlinePortalContext _ucOnlinePortalContext;
         private ISMTPHandler _emailHandler;
+        private static Random random = new Random();
 
         public EnrollmentManagement(UCOnlinePortalContext ucOnlinePortalContext, ISMTPHandler emailHandler)
         {
@@ -3716,8 +3717,8 @@ namespace UCPortal.BusinessLogic.Enrollment
             //getStudentCourse 
             var getStudentInfo = _ucOnlinePortalContext._212studentInfos.Where(x => x.StudId == getCurriculumRequest.id_number).FirstOrDefault();
             //check if the the data exist
-            
-            if (getStudentInfo == null)
+            var getLoginInfo = _ucOnlinePortalContext.LoginInfos.Where(x => x.StudId == getCurriculumRequest.id_number).FirstOrDefault();
+            if (getStudentInfo == null && getLoginInfo == null)
             {
                 //return empty data
                 return new GetCurriculumResponse { };
@@ -3726,23 +3727,15 @@ namespace UCPortal.BusinessLogic.Enrollment
             {
                 var getUnits = 0;
                 var getStudent_oenrp = _ucOnlinePortalContext._212oenrps.Where(oenrps => oenrps.StudId == getCurriculumRequest.id_number).FirstOrDefault();
-                if (getStudent_oenrp != null) { //getStudent_ornrp.Units 0
+                if (getStudent_oenrp != null)
+                { //getStudent_ornrp.Units 0
                     getUnits = getStudent_oenrp.Units;
                 }
-                //var getClassification
-                var getYear = _ucOnlinePortalContext.Curricula.Where(cur => cur.IsDeployed == 1).Select(cur => cur.Year).Min();
-
-                if (getStudentInfo.Classification == "H") {
-                    getYear = _ucOnlinePortalContext.Curricula.Where(cur => cur.IsDeployed == 1).Select(cur => cur.Year).Max();
-                }
-
-                if (getYear == null)
-                    return new GetCurriculumResponse { };
 
                 var subjects = (from subject in _ucOnlinePortalContext.SubjectInfos
                                 join curriculum in _ucOnlinePortalContext.Curricula
                                 on subject.CurriculumYear equals curriculum.Year
-                                where (subject.CourseCode == getStudentInfo.CourseCode && subject.CurriculumYear == getYear)
+                                where (subject.CourseCode == getStudentInfo.CourseCode && subject.CurriculumYear == getLoginInfo.CurrYear) // && subject.CurriculumYear == 
                                 select new GetCurriculumResponse.Subjects
                                 {
                                     internal_code = subject.InternalCode,
@@ -3752,7 +3745,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                                     descr_2 = subject.Descr2,
                                     units = Convert.ToString(subject.Units),
                                     semester = Convert.ToString(subject.Semester),
-                                    year_level = subject.YearLevel,
+                                    year_level = Convert.ToInt32(subject.YearLevel), //added convert
                                     course_code = subject.CourseCode,
                                     split_code = subject.SplitCode,
                                     split_type = subject.SplitType
@@ -3761,6 +3754,9 @@ namespace UCPortal.BusinessLogic.Enrollment
                 var remarks = (from remark in _ucOnlinePortalContext.Prerequisites
                                join subject in _ucOnlinePortalContext.SubjectInfos
                                on remark.Prerequisites equals subject.InternalCode
+                               join curriculum in _ucOnlinePortalContext.Curricula
+                               on subject.CurriculumYear equals curriculum.Year
+                               where curriculum.IsDeployed == 1
                                select new GetCurriculumResponse.Prerequisites
                                {
                                    internal_code = remark.InternalCode,
@@ -3781,6 +3777,11 @@ namespace UCPortal.BusinessLogic.Enrollment
                               }).ToList();
 
                 var schedules = (from schedule in _ucOnlinePortalContext._212schedules
+                                 join subject_info in _ucOnlinePortalContext.SubjectInfos
+                                 on schedule.InternalCode equals subject_info.InternalCode
+                                 join curriculum in _ucOnlinePortalContext.Curricula
+                                 on subject_info.CurriculumYear equals curriculum.Year
+                                 where curriculum.IsDeployed == 1
                                  select new GetCurriculumResponse.Schedules
                                  {
                                      internal_code = schedule.InternalCode,
@@ -3799,7 +3800,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                                  }).ToList();
 
                 //var subjects = getStudentCourse.CourseCode;
-                return new GetCurriculumResponse { subjects = subjects, course_code = getYear.ToString(), prerequisites = remarks, grades = grades, schedules = schedules,units = getUnits };
+                return new GetCurriculumResponse { subjects = subjects, prerequisites = remarks, grades = grades, schedules = schedules, units = getUnits };
             }
         }
 
@@ -3820,7 +3821,8 @@ namespace UCPortal.BusinessLogic.Enrollment
 
             var checkIfExistSubjectRequest = _ucOnlinePortalContext.RequestSchedules.Where(x => x.InternalCode == studentRequest.internal_code).FirstOrDefault();
 
-            if (checkIfExistSubjectRequest == null) {
+            if (checkIfExistSubjectRequest == null)
+            {
                 RequestSchedule subjectRequest = new RequestSchedule
                 {
                     SubjectName = getSubjectInfo.SubjectName,
@@ -3838,7 +3840,8 @@ namespace UCPortal.BusinessLogic.Enrollment
             }
             var checkIfExist = _ucOnlinePortalContext.StudentRequests.Where(x => x.InternalCode == studentRequest.internal_code && x.StudId == studentRequest.id_number).FirstOrDefault();
 
-            if (checkIfExist == null) {
+            if (checkIfExist == null)
+            {
                 StudentRequest studentSubjectRequest = new StudentRequest
                 {
                     StudId = studentRequest.id_number,
@@ -3846,7 +3849,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                 };
                 _ucOnlinePortalContext.StudentRequests.Add(studentSubjectRequest);
             }
-            
+
             _ucOnlinePortalContext.SaveChanges();
             return new StudentSubjectResponse { success = 1 };
         }
@@ -3870,10 +3873,10 @@ namespace UCPortal.BusinessLogic.Enrollment
                                time_end = rsubjects.TimeEnd,
                                mdn = rsubjects.Mdn,
                                days = rsubjects.Days,
-                               rtype = rsubjects.Rtype,
+                               rtype = Convert.ToInt32(rsubjects.Rtype), //added convert
                                m_time_start = rsubjects.MTimeStart,
                                m_time_end = rsubjects.MTimeEnd,
-                               status = rsubjects.Status,
+                               status = Convert.ToInt32(rsubjects.Status), // added convert
                                internal_code = rsubjects.InternalCode
                            }).ToList();
 
@@ -3898,13 +3901,13 @@ namespace UCPortal.BusinessLogic.Enrollment
                                time_end = rsubjects.TimeEnd,
                                mdn = rsubjects.Mdn,
                                days = rsubjects.Days,
-                               rtype = rsubjects.Rtype,
+                               rtype = Convert.ToInt32(rsubjects.Rtype), //added convert
                                m_time_start = rsubjects.MTimeStart,
                                m_time_end = rsubjects.MTimeEnd,
-                               status = rsubjects.Status,
+                               status = Convert.ToInt32(rsubjects.Status), //added convert
                                internal_code = rsubjects.InternalCode
                            }).ToList();
-            
+
             var studentInfo = _ucOnlinePortalContext.LoginInfos.Where(x => x.StudId == getRequest.id_number).FirstOrDefault();
 
             var filtered = (from subject in _ucOnlinePortalContext.SubjectInfos
@@ -3952,38 +3955,38 @@ namespace UCPortal.BusinessLogic.Enrollment
         public GetAllCurriculumResponse GetAllCurriculum()
         {
             var year = (from curriculum in _ucOnlinePortalContext.Curricula
-                            select new GetAllCurriculumResponse.SchoolYear
-                            {
-                                year = curriculum.Year,
-                                isDeployed = curriculum.IsDeployed
-                            }).ToList();
+                        select new GetAllCurriculumResponse.SchoolYear
+                        {
+                            year = Convert.ToInt16(curriculum.Year), //added convert
+                            isDeployed = Convert.ToInt16(curriculum.IsDeployed) //added convert
+                        }).ToList();
             var courses = (from course in _ucOnlinePortalContext.CourseLists
-                            select new GetAllCurriculumResponse.Courses
-                            {
-                                course_code = course.CourseCode,
-                                course_description = course.CourseDescription,
-                                course_abbr = course.CourseAbbr,
-                                course_year_limit = course.CourseYearLimit,
-                                course_department = course.CourseDepartment,
-                                course_department_abbr = course.CourseDepartmentAbbr,
-                                course_active = course.CourseActive,
-                                department = course.Department,
-                                enrollment_open = course.EnrollmentOpen
-                            }).ToList();
-            
+                           select new GetAllCurriculumResponse.Courses
+                           {
+                               course_code = course.CourseCode,
+                               course_description = course.CourseDescription,
+                               course_abbr = course.CourseAbbr,
+                               course_year_limit = course.CourseYearLimit,
+                               course_department = course.CourseDepartment,
+                               course_department_abbr = course.CourseDepartmentAbbr,
+                               course_active = course.CourseActive,
+                               department = course.Department,
+                               enrollment_open = Convert.ToInt16(course.EnrollmentOpen) //added convert
+                           }).ToList();
+
 
             var departments = (from department in _ucOnlinePortalContext.CourseLists
-                            select new GetAllCurriculumResponse.Departments
-                            {
-                                course_department = department.CourseDepartment,
-                                course_department_abbr = department.CourseDepartmentAbbr,
-                                department = department.Department
-                            }).Distinct().ToList();
+                               select new GetAllCurriculumResponse.Departments
+                               {
+                                   course_department = department.CourseDepartment,
+                                   course_department_abbr = department.CourseDepartmentAbbr,
+                                   department = department.Department
+                               }).Distinct().ToList();
 
-            var latest_cur = _ucOnlinePortalContext.Curricula.Max(x=> x.Year);
-
+            var latest_cur = _ucOnlinePortalContext.Curricula.Max(x => x.Year);
+             
             //var group_departments = departments
-            return new GetAllCurriculumResponse { year = year, courses = courses, departments = departments,current_curriculum=latest_cur};
+            return new GetAllCurriculumResponse { year = year, courses = courses, departments = departments, current_curriculum = Convert.ToInt16(latest_cur) }; //added convert
         }
 
         public GetCourseInfoResponse GetCourseInfo(GetCourseInfoRequest getRequest)
@@ -3993,39 +3996,203 @@ namespace UCPortal.BusinessLogic.Enrollment
                 return new GetCourseInfoResponse { };
             }
             if (getRequest.department != null)
-            { 
-                 var filteredCourseList = (from subject in _ucOnlinePortalContext.SubjectInfos
-                                  join course in _ucOnlinePortalContext.CourseLists
-                                  on subject.CourseCode equals course.CourseCode
-                                  where (course.CourseDepartmentAbbr == getRequest.department && subject.CurriculumYear == getRequest.curr_year)
-                                  select new GetCourseInfoResponse.Courses
-                                  {
-                                      course_code = subject.CourseCode,
-                                      course_description = course.CourseDescription,
-                                      course_abbr = course.CourseAbbr,
-                                      year_limit = course.CourseYearLimit,
-                                      course_department = course.CourseDepartment,
-                                      course_department_abbr = course.CourseDepartmentAbbr
-                                  }).Distinct().ToList();
+            {
+                var filteredCourseList = (from subject in _ucOnlinePortalContext.SubjectInfos
+                                          join course in _ucOnlinePortalContext.CourseLists
+                                          on subject.CourseCode equals course.CourseCode
+                                          where (course.CourseDepartmentAbbr == getRequest.department && subject.CurriculumYear == getRequest.curr_year)
+                                          select new GetCourseInfoResponse.Courses
+                                          {
+                                              course_code = subject.CourseCode,
+                                              course_description = course.CourseDescription,
+                                              course_abbr = course.CourseAbbr,
+                                              year_limit = course.CourseYearLimit,
+                                              course_department = course.CourseDepartment,
+                                              course_department_abbr = course.CourseDepartmentAbbr
+                                          }).Distinct().ToList();
 
                 return new GetCourseInfoResponse { courses = filteredCourseList };
             }
 
             var getCourseList = (from subject in _ucOnlinePortalContext.SubjectInfos
-                             join course in _ucOnlinePortalContext.CourseLists
-                             on subject.CourseCode equals course.CourseCode
-                             where (subject.CurriculumYear == getRequest.curr_year)
-                             select new GetCourseInfoResponse.Courses
-                             {
-                                 course_code = subject.CourseCode,
-                                 course_description = course.CourseDescription,
-                                 course_abbr = course.CourseAbbr,
-                                 year_limit = course.CourseYearLimit,
-                                 course_department = course.CourseDepartment,
-                                 course_department_abbr = course.CourseDepartmentAbbr
-                             }).Distinct().ToList();
+                                 join course in _ucOnlinePortalContext.CourseLists
+                                 on subject.CourseCode equals course.CourseCode
+                                 where (subject.CurriculumYear == getRequest.curr_year)
+                                 select new GetCourseInfoResponse.Courses
+                                 {
+                                     course_code = subject.CourseCode,
+                                     course_description = course.CourseDescription,
+                                     course_abbr = course.CourseAbbr,
+                                     year_limit = course.CourseYearLimit,
+                                     course_department = course.CourseDepartment,
+                                     course_department_abbr = course.CourseDepartmentAbbr
+                                 }).Distinct().ToList();
 
             return new GetCourseInfoResponse { courses = getCourseList };
+        }
+        public static string GenerateAlphaNumeric(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+        public bool checkInternalCode(string int_code)
+        {
+            bool found = false;
+            var checkCurriculumIfExist = _ucOnlinePortalContext.SubjectInfos.Where(x => x.InternalCode == int_code).FirstOrDefault();
+            if (checkCurriculumIfExist != null)
+                found = true;
+            return found;
+        }
+        public string GenerateInternalCode(string course)
+        {
+            string newCode = GenerateAlphaNumeric(6 - course.Length);
+            string newInternalCode = course;
+
+            newInternalCode += newCode;
+
+            if (checkInternalCode(newInternalCode))
+            {
+                return GenerateInternalCode(course);
+            }
+
+            return newInternalCode;
+        }
+        public AddCurriculumResponse AddCurriculum(AddCurriculumRequest getRequest)
+        {
+
+            var checkCurriculumIfExist = _ucOnlinePortalContext.Curricula.Where(x => x.Year == getRequest.curr_year).FirstOrDefault();
+
+            if (checkCurriculumIfExist == null)
+            {
+                Curriculum curr = new Curriculum
+                {
+                    Year = Convert.ToInt16(getRequest.curr_year),
+                    IsDeployed = 1
+                };
+                _ucOnlinePortalContext.Curricula.Add(curr);
+                _ucOnlinePortalContext.SaveChanges();
+                //return new AddCurriculumResponse { success = 0 };
+            }
+
+            foreach (AddCurriculumRequest.Subjects subjects in getRequest.subjects)
+            {
+                var checkIfExist = _ucOnlinePortalContext.SubjectInfos.Where(x => x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year).FirstOrDefault();
+                if (checkIfExist == null)
+                {
+                    if (subjects.lab != 0)
+                    {
+                        SubjectInfo subjectInfoLab = new SubjectInfo
+                        {
+                            InternalCode = GenerateInternalCode(getRequest.course),
+                            SubjectName = subjects.subject,
+                            SubjectType = "L",
+                            Descr1 = subjects.description,
+                            Descr2 = null,
+                            Units = Convert.ToInt16(subjects.lab),
+                            Semester = Convert.ToInt16(subjects.semester),
+                            CourseCode = getRequest.course,
+                            YearLevel = subjects.year,
+                            SplitType = "C",
+                            CurriculumYear = getRequest.curr_year
+                        };
+                        _ucOnlinePortalContext.SubjectInfos.Add(subjectInfoLab);
+                        _ucOnlinePortalContext.SaveChanges();
+                    }
+                    var getInternalCodeLab = _ucOnlinePortalContext.SubjectInfos.Where(x => x.CurriculumYear == getRequest.curr_year && x.SubjectName == subjects.subject && x.SplitType == "C").FirstOrDefault();
+                    string internal_code = null;
+                    if (getInternalCodeLab != null)
+                    {
+                        internal_code = getInternalCodeLab.InternalCode;
+                    }
+
+                    SubjectInfo subjectInfo = new SubjectInfo
+                    {
+                        InternalCode = GenerateInternalCode(getRequest.course),
+                        SubjectName = subjects.subject,
+                        SubjectType = null,
+                        Descr1 = subjects.description,
+                        Descr2 = null,
+                        Units = Convert.ToInt16(subjects.lec),
+                        Semester = Convert.ToInt16(subjects.semester),
+                        CourseCode = getRequest.course,
+                        YearLevel = subjects.year,
+                        SplitType = "S",
+                        CurriculumYear = getRequest.curr_year,
+                        SplitCode = internal_code
+                    };
+
+                    _ucOnlinePortalContext.SubjectInfos.Add(subjectInfo);
+                    _ucOnlinePortalContext.SaveChanges();
+
+                    var getSubjectInfo = _ucOnlinePortalContext.SubjectInfos.Where(x => x.CurriculumYear == getRequest.curr_year && x.SubjectName == subjects.subject && x.SplitType == "S").FirstOrDefault();
+
+                    if (getSubjectInfo != null)
+                    {
+                        var subjectUpdate = _ucOnlinePortalContext.SubjectInfos.Where(x => x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year && x.SubjectType == "L" && x.SplitType == "C").FirstOrDefault();
+
+                        subjectUpdate.SplitCode = getSubjectInfo.InternalCode;
+                        _ucOnlinePortalContext.SubjectInfos.Update(subjectUpdate);
+                        _ucOnlinePortalContext.SaveChanges();
+                    }
+                    else
+                    {
+                        return new AddCurriculumResponse { success = 0 };
+                    }
+                }
+                else
+                {
+                    /*if (subjects.lab != 0)
+                    {
+                        var updateSubject = _ucOnlinePortalContext.SubjectInfos.Where(x => x.CurriculumYear == getRequest.curr_year && x.SubjectName == subjects.subject).FirstOrDefault();
+                        if(updateSubject == null)
+                            return new AddCurriculumResponse { success = 0 };
+                        updateSubject.Descr1 = 
+                        _ucOnlinePortalContext.SubjectInfos.Update(updateSubject);
+                        _ucOnlinePortalContext.SaveChanges();
+                    }*/
+                    return new AddCurriculumResponse { success = 0 };
+                }
+            }
+            return new AddCurriculumResponse { success = 1 };
+        }
+        public CloseCurriculumReponse CloseCurriculum(CloseCurriculumRequest getRequest)
+        {
+            var updateCurriculum = _ucOnlinePortalContext.Curricula.Where(x => x.Year == getRequest.curr_year).FirstOrDefault();
+            if (updateCurriculum == null)
+            {
+                return new CloseCurriculumReponse { success = 0 };
+            }
+            updateCurriculum.IsDeployed = 0;
+            _ucOnlinePortalContext.Curricula.Update(updateCurriculum);
+            _ucOnlinePortalContext.SaveChanges();
+
+            return new CloseCurriculumReponse { success = 1};
+        }
+
+
+        public GetSubjectInfoResponse GetSubjectInfo(GetSubjectInfoRequest getRequest)
+        {
+            var subjects = (from subject in _ucOnlinePortalContext.SubjectInfos
+                            join curriculum in _ucOnlinePortalContext.Curricula
+                            on subject.CurriculumYear equals curriculum.Year
+                            where (curriculum.IsDeployed == 1 && subject.CurriculumYear == getRequest.curr_year && getRequest.course_code == subject.CourseCode) // && subject.CurriculumYear == 
+                            select new GetSubjectInfoResponse.Subjects
+                            {
+                                internal_code = subject.InternalCode,
+                                subject_name = subject.SubjectName,
+                                subject_type = subject.SubjectType,
+                                descr_1 = subject.Descr1,
+                                descr_2 = subject.Descr2,
+                                units = Convert.ToString(subject.Units),
+                                semester = Convert.ToString(subject.Semester),
+                                year_level = Convert.ToInt32(subject.YearLevel), //added convert
+                                course_code = subject.CourseCode,
+                                split_code = subject.SplitCode,
+                                split_type = subject.SplitType
+                            }).ToList();
+
+            return new GetSubjectInfoResponse { subjects=subjects};
         }
     }
 }

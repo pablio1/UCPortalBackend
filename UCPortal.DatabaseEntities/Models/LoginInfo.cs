@@ -28,5 +28,6 @@ namespace UCPortal.DatabaseEntities.Models
         public short? AllowedUnits { get; set; }
         public string UserType { get; set; }
         public string Token { get; set; }
+        public short? CurrYear { get; set; }
     }
 }

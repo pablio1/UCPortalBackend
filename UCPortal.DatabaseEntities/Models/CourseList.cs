@@ -16,7 +16,7 @@ namespace UCPortal.DatabaseEntities.Models
         public string CourseDepartmentAbbr { get; set; }
         public string Department { get; set; }
         public short CourseActive { get; set; }
-        public short EnrollmentOpen { get; set; }
+        public short? EnrollmentOpen { get; set; }
         public DateTime? AdjustmentStart { get; set; }
         public DateTime? AdjustmentEnd { get; set; }
     }
