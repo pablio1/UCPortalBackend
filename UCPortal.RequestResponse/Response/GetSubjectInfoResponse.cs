@@ -7,6 +7,7 @@ namespace UCPortal.RequestResponse.Response
     public class GetSubjectInfoResponse
     {
         public List<Subjects> subjects { get; set; }
+        public List<Prerequisites> prerequisites { get; set; }
         public class Subjects
         {
             public string internal_code { get; set; }
@@ -20,6 +21,13 @@ namespace UCPortal.RequestResponse.Response
             public string course_code { get; set; }
             public string split_type { get; set; }
             public string split_code { get; set; }
+        }
+
+        public class Prerequisites
+        {
+            public string internal_code { get; set; }
+            public string subject_code { get; set; }
+            public string prerequisites { get; set; }
         }
     }
 }

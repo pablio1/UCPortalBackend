@@ -1349,8 +1349,41 @@ namespace UCPortal.Controllers
                 var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Subjects>(rSched);
                 return cSched;
             }).ToList();
+            var remarks = result.prerequisites.Select(x =>
+            {
+                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Prerequisites>(rSched);
+                return cSched;
+            }).ToList();
 
-            return Ok(new GetSubjectInfoResponse { subjects = subjects });
+            return Ok(new GetSubjectInfoResponse { subjects = subjects, prerequisites = remarks });
         }
+        [HttpPost]
+        [Route("curriculum/removeprerequisite")]
+        public async Task<IActionResult> RemovePrerequisite([FromBody] RemovePrerequisiteRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.RemovePrerequisiteRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.RemovePrerequisite(converted_req));
+
+            return Ok(new RemovePrerequisiteResponse { success = result.success });
+        }
+        [HttpPost]
+        [Route("curriculum/saveprerequisite")]
+        public async Task<IActionResult> SavePrerequisite([FromBody] SavePrerequisiteRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.SavePrerequisiteRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.SavePrerequisite(converted_req));
+
+            return Ok(new RemovePrerequisiteResponse { success = result.success });
+        }
+
     }
 }
