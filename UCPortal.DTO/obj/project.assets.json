@@ -110,23 +110,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Developer\\.nuget\\packages\\": {},
+    "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+      "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj",
       "projectName": "UCPortal.DTO",
-      "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
-      "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\obj\\",
+      "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj",
+      "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

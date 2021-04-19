@@ -20,10 +20,11 @@ namespace UCPortal.DatabaseEntities.Models
         public virtual DbSet<Config> Configs { get; set; }
         public virtual DbSet<CourseList> CourseLists { get; set; }
         public virtual DbSet<Curriculum> Curricula { get; set; }
+        public virtual DbSet<Equivalence> Equivalences { get; set; }
         public virtual DbSet<GradeEvaluation> GradeEvaluations { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
-        public virtual DbSet<Prerequisite> Prerequisites { get; set; }
         public virtual DbSet<RequestSchedule> RequestSchedules { get; set; }
+        public virtual DbSet<Requisite> Requisites { get; set; }
         public virtual DbSet<StudentRequest> StudentRequests { get; set; }
         public virtual DbSet<SubjectInfo> SubjectInfos { get; set; }
         public virtual DbSet<TmpLogin> TmpLogins { get; set; }
@@ -43,6 +44,7 @@ namespace UCPortal.DatabaseEntities.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=ADMIN-PC\\SQLEXPRESS;Database=UCOnlinePortal;Trusted_Connection=True;");
             }
         }
@@ -134,6 +136,25 @@ namespace UCPortal.DatabaseEntities.Models
                 entity.Property(e => e.IsDeployed).HasColumnName("isDeployed");
 
                 entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Equivalence>(entity =>
+            {
+                entity.HasKey(e => e.EquivalId);
+
+                entity.ToTable("equivalence");
+
+                entity.Property(e => e.EquivalId).HasColumnName("equival_id");
+
+                entity.Property(e => e.EquivalCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("equival_code");
+
+                entity.Property(e => e.InternalCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("internal_code");
             });
 
             modelBuilder.Entity<GradeEvaluation>(entity =>
@@ -275,23 +296,6 @@ namespace UCPortal.DatabaseEntities.Models
                 entity.Property(e => e.Year).HasColumnName("year");
             });
 
-            modelBuilder.Entity<Prerequisite>(entity =>
-            {
-                entity.ToTable("prerequisite");
-
-                entity.Property(e => e.PrerequisiteId).HasColumnName("prerequisite_id");
-
-                entity.Property(e => e.InternalCode)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("internal_code");
-
-                entity.Property(e => e.Prerequisites)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("prerequisites");
-            });
-
             modelBuilder.Entity<RequestSchedule>(entity =>
             {
                 entity.HasKey(e => e.RequestId);
@@ -355,6 +359,28 @@ namespace UCPortal.DatabaseEntities.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("time_start");
+            });
+
+            modelBuilder.Entity<Requisite>(entity =>
+            {
+                entity.ToTable("requisite");
+
+                entity.Property(e => e.RequisiteId).HasColumnName("requisite_id");
+
+                entity.Property(e => e.InternalCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("internal_code");
+
+                entity.Property(e => e.RequisiteCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("requisite_code");
+
+                entity.Property(e => e.RequisiteType)
+                    .HasMaxLength(5)
+                    .IsUnicode(false)
+                    .HasColumnName("requisite_type");
             });
 
             modelBuilder.Entity<StudentRequest>(entity =>

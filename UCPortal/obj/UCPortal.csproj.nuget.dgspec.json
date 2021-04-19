@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj": {}
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal\\UCPortal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
         "projectName": "UCPortal.BusinessLogic",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,17 +31,17 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
               },
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj"
               },
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj"
               },
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
               }
             }
           }
@@ -80,20 +80,20 @@
         }
       }
     },
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
         "projectName": "UCPortal.DatabaseEntities",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -153,20 +153,20 @@
         }
       }
     },
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj",
         "projectName": "UCPortal.DTO",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\UCPortal.DTO.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DTO\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\UCPortal.DTO.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -216,20 +216,20 @@
         }
       }
     },
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
         "projectName": "UCPortal.EmailHandler",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.EmailHandler\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\UCPortal.EmailHandler.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.EmailHandler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -283,20 +283,20 @@
         }
       }
     },
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
         "projectName": "UCPortal.RequestResponse",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -346,20 +346,20 @@
         }
       }
     },
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal\\UCPortal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal\\UCPortal.csproj",
         "projectName": "UCPortal",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal\\UCPortal.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal\\UCPortal.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -373,14 +373,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.BusinessLogic\\UCPortal.BusinessLogic.csproj"
               },
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj"
               },
-              "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
-                "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
+              "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj": {
+                "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.RequestResponse\\UCPortal.RequestResponse.csproj"
               }
             }
           }

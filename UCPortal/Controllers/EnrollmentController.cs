@@ -1128,10 +1128,10 @@ namespace UCPortal.Controllers
                 return cSched;
             }).ToList();
 
-            var remark = result.prerequisites.Select(x =>
+            var remark = result.requisites.Select(x =>
            {
                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
-               var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetCurriculumResponse.Prerequisites>(rSched);
+               var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetCurriculumResponse.Requisites>(rSched);
                return cSched;
            }).ToList();
 
@@ -1149,7 +1149,7 @@ namespace UCPortal.Controllers
                 return cSchedule;
             }).ToList();
 
-            return Ok(new GetCurriculumResponse { subjects = response, course_code = result.course_code, prerequisites = remark, grades = grades, schedules = schedules, units = result.units });
+            return Ok(new GetCurriculumResponse { subjects = response, course_code = result.course_code, requisites = remark, grades = grades, schedules = schedules, units = result.units });
         }
         [HttpPost]
         [Route("student/requestsubject")]
@@ -1349,40 +1349,40 @@ namespace UCPortal.Controllers
                 var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Subjects>(rSched);
                 return cSched;
             }).ToList();
-            var remarks = result.prerequisites.Select(x =>
+            var remarks = result.requisites.Select(x =>
             {
                 var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
-                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Prerequisites>(rSched);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectInfoResponse.Requisites>(rSched);
                 return cSched;
             }).ToList();
 
-            return Ok(new GetSubjectInfoResponse { subjects = subjects, prerequisites = remarks });
+            return Ok(new GetSubjectInfoResponse { subjects = subjects, requisites = remarks });
         }
         [HttpPost]
-        [Route("curriculum/removeprerequisite")]
-        public async Task<IActionResult> RemovePrerequisite([FromBody] RemovePrerequisiteRequest request)
+        [Route("curriculum/removerequisite")]
+        public async Task<IActionResult> RemovePrerequisite([FromBody] RemoveRequisiteRequest request)
         {
             //Convert response object to DTO Objects
             var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.RemovePrerequisiteRequest>(serialized_req);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.RemoveRequisiteRequest>(serialized_req);
 
             //await result from function ChangePassword
             var result = await Task.FromResult(_enrollmentManagement.RemovePrerequisite(converted_req));
 
-            return Ok(new RemovePrerequisiteResponse { success = result.success });
+            return Ok(new RemoveRequisiteResponse { success = result.success });
         }
         [HttpPost]
-        [Route("curriculum/saveprerequisite")]
-        public async Task<IActionResult> SavePrerequisite([FromBody] SavePrerequisiteRequest request)
+        [Route("curriculum/saverequisite")]
+        public async Task<IActionResult> SavePrerequisite([FromBody] SaveRequisiteRequest request)
         {
             //Convert response object to DTO Objects
             var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.SavePrerequisiteRequest>(serialized_req);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.SaveRequisiteRequest>(serialized_req);
 
             //await result from function ChangePassword
             var result = await Task.FromResult(_enrollmentManagement.SavePrerequisite(converted_req));
 
-            return Ok(new RemovePrerequisiteResponse { success = result.success });
+            return Ok(new RemoveRequisiteResponse { success = result.success });
         }
 
     }

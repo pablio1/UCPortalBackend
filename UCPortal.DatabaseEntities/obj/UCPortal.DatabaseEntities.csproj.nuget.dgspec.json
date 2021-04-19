@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {}
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
+    "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "projectUniqueName": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
         "projectName": "UCPortal.DatabaseEntities",
-        "projectPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
-        "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Developer\\Desktop\\Capstone\\studentevaluation-back-end\\UCPortal.DatabaseEntities\\obj\\",
+        "projectPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\UCPortal.DatabaseEntities.csproj",
+        "packagesPath": "C:\\Users\\Publio.Admin-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Publio.Admin-PC\\Desktop\\Capstone42\\UCPortalBackend\\UCPortal.DatabaseEntities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Publio.Admin-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

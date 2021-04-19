@@ -8,7 +8,7 @@ namespace UCPortal.RequestResponse.Response
     {
         public string course_code { get; set; }
         public List<Subjects> subjects { get; set; }
-        public List<Prerequisites> prerequisites { get; set; }
+        public List<Requisites> requisites { get; set; }
         public List<Grades> grades { get; set; }
         public int units { get; set; }
         public List<Schedules> schedules { get; set; }
@@ -27,11 +27,12 @@ namespace UCPortal.RequestResponse.Response
             public string split_code { get; set; }
         }
 
-        public class Prerequisites
+        public class Requisites
         { 
             public string internal_code { get; set; }
             public string subject_code { get; set; }
-            public string prerequisites { get; set; }
+            public string requisites { get; set; }
+            public string requisite_type { get; set; }
         }
 
         public class Grades

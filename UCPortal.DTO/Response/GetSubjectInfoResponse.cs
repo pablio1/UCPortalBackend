@@ -7,7 +7,7 @@ namespace UCPortal.DTO.Response
     public class GetSubjectInfoResponse
     {
         public List<Subjects> subjects { get; set; }
-        public List<Prerequisites> prerequisites { get; set; }
+        public List<Requisites> requisites { get; set; }
         public class Subjects
         {
             public string internal_code { get; set; }
@@ -22,11 +22,12 @@ namespace UCPortal.DTO.Response
             public string split_type { get; set; }
             public string split_code { get; set; }
         }
-        public class Prerequisites
+        public class Requisites
         {
             public string internal_code { get; set; }
             public string subject_code { get; set; }
-            public string prerequisites { get; set; }
+            public string requisites { get; set; }
+            public string requisite_type { get; set; }
         }
     }
 }

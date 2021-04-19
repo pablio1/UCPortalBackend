@@ -3751,17 +3751,18 @@ namespace UCPortal.BusinessLogic.Enrollment
                                     split_type = subject.SplitType
                                 }).ToList();
 
-                var remarks = (from remark in _ucOnlinePortalContext.Prerequisites
+                var remarks = (from remark in _ucOnlinePortalContext.Requisites
                                join subject in _ucOnlinePortalContext.SubjectInfos
-                               on remark.Prerequisites equals subject.InternalCode
+                               on remark.RequisiteCode equals subject.InternalCode
                                join curriculum in _ucOnlinePortalContext.Curricula
                                on subject.CurriculumYear equals curriculum.Year
                                where curriculum.IsDeployed == 1
-                               select new GetCurriculumResponse.Prerequisites
+                               select new GetCurriculumResponse.Requisites
                                {
                                    internal_code = remark.InternalCode,
                                    subject_code = subject.SubjectName,
-                                   prerequisites = remark.Prerequisites
+                                   requisites = remark.RequisiteCode,
+                                   requisite_type = remark.RequisiteType
                                }).ToList();
 
                 var grades = (from subject in _ucOnlinePortalContext.SubjectInfos
@@ -3800,7 +3801,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                                  }).ToList();
 
                 //var subjects = getStudentCourse.CourseCode;
-                return new GetCurriculumResponse { subjects = subjects, prerequisites = remarks, grades = grades, schedules = schedules, units = getUnits };
+                return new GetCurriculumResponse { subjects = subjects, requisites = remarks, grades = grades, schedules = schedules, units = getUnits };
             }
         }
 
@@ -4200,47 +4201,49 @@ namespace UCPortal.BusinessLogic.Enrollment
                                 split_type = subject.SplitType
                             }).ToList();
 
-            var remarks = (from remark in _ucOnlinePortalContext.Prerequisites
+            var remarks = (from remark in _ucOnlinePortalContext.Requisites
                            join subject in _ucOnlinePortalContext.SubjectInfos
-                           on remark.Prerequisites equals subject.InternalCode
+                           on remark.RequisiteCode equals subject.InternalCode
                            join curriculum in _ucOnlinePortalContext.Curricula
                            on subject.CurriculumYear equals curriculum.Year
                            where (subject.CurriculumYear == getRequest.curr_year && subject.CourseCode == getRequest.course_code)
-                           select new GetSubjectInfoResponse.Prerequisites
+                           select new GetSubjectInfoResponse.Requisites
                            {
                                internal_code = remark.InternalCode,
                                subject_code = subject.SubjectName,
-                               prerequisites = remark.Prerequisites
+                               requisites = remark.RequisiteCode,
+                               requisite_type = remark.RequisiteType
                            }).ToList();
 
-            return new GetSubjectInfoResponse { subjects = subjects, prerequisites = remarks };
+            return new GetSubjectInfoResponse { subjects = subjects, requisites = remarks };
         }
 
-        public RemovePrerequisiteResponse RemovePrerequisite(RemovePrerequisiteRequest getRequest)
+        public RemoveRequisiteResponse RemovePrerequisite(RemoveRequisiteRequest getRequest)
         {
-            var checkIfExist = _ucOnlinePortalContext.Prerequisites.Where(x => x.InternalCode == getRequest.internal_code && x.Prerequisites == getRequest.prerequisite).FirstOrDefault();
+            var checkIfExist = _ucOnlinePortalContext.Requisites.Where(x => x.InternalCode == getRequest.internal_code && x.RequisiteCode == getRequest.requisite && x.RequisiteType == getRequest.requisite_type).FirstOrDefault();
             if (checkIfExist == null) {
-                return new RemovePrerequisiteResponse { success = 0};
+                return new RemoveRequisiteResponse { success = 0};
             }
-            _ucOnlinePortalContext.Prerequisites.Remove(checkIfExist);
+            _ucOnlinePortalContext.Requisites.Remove(checkIfExist);
             _ucOnlinePortalContext.SaveChanges();
 
-            return new RemovePrerequisiteResponse { success = 1 };
+            return new RemoveRequisiteResponse { success = 1 };
         }
-        public SavePrerequisiteResponse SavePrerequisite(SavePrerequisiteRequest savePrerequisiteRequest)
+        public SaveRequisiteResponse SavePrerequisite(SaveRequisiteRequest savePrerequisiteRequest)
         {
-            if (savePrerequisiteRequest.internal_code == null || savePrerequisiteRequest.prerequisite == null)
+            if (savePrerequisiteRequest.internal_code == null || savePrerequisiteRequest.requisite == null)
             {
-                return new SavePrerequisiteResponse { success = 0 };
+                return new SaveRequisiteResponse { success = 0 };
             }
-            Prerequisite prerequisite = new Prerequisite
+            Requisite requisite = new Requisite
             {
                 InternalCode = savePrerequisiteRequest.internal_code,
-                Prerequisites = savePrerequisiteRequest.prerequisite
+                RequisiteCode = savePrerequisiteRequest.requisite,
+                RequisiteType = savePrerequisiteRequest.requisite_type
             };
-            _ucOnlinePortalContext.Prerequisites.Add(prerequisite);
+            _ucOnlinePortalContext.Requisites.Add(requisite);
             _ucOnlinePortalContext.SaveChanges();
-            return new SavePrerequisiteResponse { success = 1 };
+            return new SaveRequisiteResponse { success = 1 };
         }
     }
 }
