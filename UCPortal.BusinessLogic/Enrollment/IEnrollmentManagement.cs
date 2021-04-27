@@ -65,5 +65,10 @@ namespace UCPortal.BusinessLogic.Enrollment
         GetSubjectInfoResponse GetSubjectInfo(GetSubjectInfoRequest getRequest);
         RemoveRequisiteResponse RemovePrerequisite(RemoveRequisiteRequest getRequest);
         SaveRequisiteResponse SavePrerequisite(SaveRequisiteRequest savePrerequisiteRequest);
+        GetEquivalenceResponse GetEquivalence(GetEquivalenceRequest getEquivalenceRequest);
+        SearchSubjectResponse SearchSubject(SearchSubjectRequest searchSubjectRequest);
+        AddEquivalenceResponse AddEquivalence(AddEquivalenceRequest addEquivalenceRequest);
+        RemoveEquivalenceResponse RemoveEquivalence(RemoveEquivalenceRequest removeEquivalenceRequest);
+        GetSubjectEquivalenceResponse GetSubjectEquivalence(GetSubjectEquivalenceRequest equivalenceRequest);
     }
 }

@@ -3804,8 +3804,6 @@ namespace UCPortal.BusinessLogic.Enrollment
                 return new GetCurriculumResponse { subjects = subjects, requisites = remarks, grades = grades, schedules = schedules, units = getUnits };
             }
         }
-
-
         public StudentSubjectResponse RequestSubject(StudentSubjectRequest studentRequest)  //id_number
         {
             if (studentRequest == null)
@@ -4064,8 +4062,8 @@ namespace UCPortal.BusinessLogic.Enrollment
             if (getRequest.curr_year == 0)
                 return new AddCurriculumResponse { success = 0 };
 
+            ///var checkCurriculumIfExist = _ucOnlinePortalContext.Curricula.Where(x => x.Year == getRequest.curr_year ).FirstOrDefault();
             var checkCurriculumIfExist = _ucOnlinePortalContext.Curricula.Where(x => x.Year == getRequest.curr_year).FirstOrDefault();
-
             if (checkCurriculumIfExist == null)
             {
                 Curriculum curr = new Curriculum
@@ -4080,7 +4078,7 @@ namespace UCPortal.BusinessLogic.Enrollment
 
             foreach (AddCurriculumRequest.Subjects subjects in getRequest.subjects)
             {
-                var checkIfExist = _ucOnlinePortalContext.SubjectInfos.Where(x => x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year).FirstOrDefault();
+                var checkIfExist = _ucOnlinePortalContext.SubjectInfos.Where(x => x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year && x.CourseCode == getRequest.course).FirstOrDefault();
                 if (checkIfExist == null)
                 {
                     //Check if lab unit != 0 and save subject
@@ -4133,20 +4131,18 @@ namespace UCPortal.BusinessLogic.Enrollment
 
                     if (subjects.lab != 0)
                     {
-                        var getSubjectInfo = _ucOnlinePortalContext.SubjectInfos.Where(x => x.CurriculumYear == getRequest.curr_year && x.SubjectName == subjects.subject && x.SplitType == "S").FirstOrDefault();
-
-                        if (getSubjectInfo != null)
-                        {
-                            var subjectUpdate = _ucOnlinePortalContext.SubjectInfos.Where(x => x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year && x.SubjectType == "L" && x.SplitType == "C").FirstOrDefault();
-
-                            subjectUpdate.SplitCode = getSubjectInfo.InternalCode; //error here
-                            _ucOnlinePortalContext.SubjectInfos.Update(subjectUpdate);
-                            _ucOnlinePortalContext.SaveChanges();
-                        }
-                        else
+                        var getLab = _ucOnlinePortalContext.SubjectInfos.Where(x=> x.SubjectName == subjects.subject && x.CurriculumYear == getRequest.curr_year && x.SubjectType == "L").FirstOrDefault();
+                        var updateSubject = _ucOnlinePortalContext.SubjectInfos.Where(x => x.CurriculumYear == getRequest.curr_year && x.SubjectName == subjects.subject && x.SplitType == "S").FirstOrDefault();
+                        if (getLab == null) 
                         {
                             return new AddCurriculumResponse { success = 0 };
                         }
+                        updateSubject.SplitCode = getLab.InternalCode;
+                        getLab.SplitCode = updateSubject.InternalCode;
+                        
+
+                        _ucOnlinePortalContext.SubjectInfos.Update(updateSubject);
+                        _ucOnlinePortalContext.SaveChanges();
                     }
                 }
                 else
@@ -4206,7 +4202,7 @@ namespace UCPortal.BusinessLogic.Enrollment
                            on remark.RequisiteCode equals subject.InternalCode
                            join curriculum in _ucOnlinePortalContext.Curricula
                            on subject.CurriculumYear equals curriculum.Year
-                           where (subject.CurriculumYear == getRequest.curr_year && subject.CourseCode == getRequest.course_code)
+                           where (curriculum.IsDeployed == 1)
                            select new GetSubjectInfoResponse.Requisites
                            {
                                internal_code = remark.InternalCode,
@@ -4222,7 +4218,7 @@ namespace UCPortal.BusinessLogic.Enrollment
         {
             var checkIfExist = _ucOnlinePortalContext.Requisites.Where(x => x.InternalCode == getRequest.internal_code && x.RequisiteCode == getRequest.requisite && x.RequisiteType == getRequest.requisite_type).FirstOrDefault();
             if (checkIfExist == null) {
-                return new RemoveRequisiteResponse { success = 0};
+                return new RemoveRequisiteResponse { success = 0 };
             }
             _ucOnlinePortalContext.Requisites.Remove(checkIfExist);
             _ucOnlinePortalContext.SaveChanges();
@@ -4244,6 +4240,124 @@ namespace UCPortal.BusinessLogic.Enrollment
             _ucOnlinePortalContext.Requisites.Add(requisite);
             _ucOnlinePortalContext.SaveChanges();
             return new SaveRequisiteResponse { success = 1 };
+        }
+
+        public GetEquivalenceResponse GetEquivalence(GetEquivalenceRequest getEquivalenceRequest)
+        {
+            if (getEquivalenceRequest.description == null) 
+            {
+                return new GetEquivalenceResponse {};
+            }
+
+            var equivalences = (from subjectInfo in _ucOnlinePortalContext.SubjectInfos
+                           join curr in _ucOnlinePortalContext.Curricula
+                           on subjectInfo.CurriculumYear equals curr.Year
+                           join course in _ucOnlinePortalContext.CourseLists
+                           on subjectInfo.CourseCode equals course.CourseCode
+                           where (curr.IsDeployed == 1 && (subjectInfo.Descr1.Contains(getEquivalenceRequest.description) || subjectInfo.Descr2.Contains(getEquivalenceRequest.description)))
+                           select new GetEquivalenceResponse.Equivalence
+                           {
+                               internal_code = subjectInfo.InternalCode,
+                               subject = subjectInfo.SubjectName,
+                               descr_1 = subjectInfo.Descr1,
+                               desc_2 = subjectInfo.Descr2,
+                               subject_type = subjectInfo.SubjectType,
+                               units = subjectInfo.Units,
+                               split_code = subjectInfo.SplitCode,
+                               split_type = subjectInfo.SplitType,
+                               semester = (short)subjectInfo.Semester,
+                               year = (short)subjectInfo.YearLevel,
+                               curr_year = (int)subjectInfo.CurriculumYear,
+                               course = course.CourseAbbr
+                           }).ToList();
+
+            //var temp = equivalences.
+
+            return new GetEquivalenceResponse {equivalences = equivalences};
+        }
+        public SearchSubjectResponse SearchSubject(SearchSubjectRequest searchSubjectRequest)
+        {
+            if (searchSubjectRequest == null) {
+                return new SearchSubjectResponse { };
+            }
+            var subjects = (from subjectInfo in _ucOnlinePortalContext.SubjectInfos
+                                join curr in _ucOnlinePortalContext.Curricula
+                                on subjectInfo.CurriculumYear equals curr.Year
+                                join course in _ucOnlinePortalContext.CourseLists
+                                on subjectInfo.CourseCode equals course.CourseCode
+                                where (curr.IsDeployed == 1 && (subjectInfo.SubjectName.Contains(searchSubjectRequest.subject_name)))
+                                select new SearchSubjectResponse.Subjects
+                                {
+                                    internal_code = subjectInfo.InternalCode,
+                                    subject = subjectInfo.SubjectName,
+                                    descr_1 = subjectInfo.Descr1,
+                                    desc_2 = subjectInfo.Descr2,
+                                    subject_type = subjectInfo.SubjectType,
+                                    units = subjectInfo.Units,
+                                    split_code = subjectInfo.SplitCode,
+                                    split_type = subjectInfo.SplitType,
+                                    semester = (short)subjectInfo.Semester,
+                                    year = (short)subjectInfo.YearLevel,
+                                    curr_year = (int)subjectInfo.CurriculumYear,
+                                    course = course.CourseAbbr
+                                }).ToList();
+            return new SearchSubjectResponse { subjects = subjects };
+        }
+
+        public AddEquivalenceResponse AddEquivalence(AddEquivalenceRequest addEquivalenceRequest)
+        {
+            if (addEquivalenceRequest == null)
+                return new AddEquivalenceResponse { success = 0 };
+
+            Equivalence equival = new Equivalence
+            {
+                InternalCode = addEquivalenceRequest.internal_code,
+                EquivalCode = addEquivalenceRequest.equivalence_code
+            };
+            _ucOnlinePortalContext.Equivalences.Add(equival);
+            _ucOnlinePortalContext.SaveChanges();
+
+            return new AddEquivalenceResponse { success = 1 };
+        }
+        public RemoveEquivalenceResponse RemoveEquivalence(RemoveEquivalenceRequest removeEquivalenceRequest)
+        {
+            var checkIfExist = _ucOnlinePortalContext.Equivalences.Where(x => x.InternalCode == removeEquivalenceRequest.internal_code && x.InternalCode == removeEquivalenceRequest.internal_code && x.EquivalCode == removeEquivalenceRequest.equivalence_code).FirstOrDefault();
+            if (checkIfExist == null)
+            {
+                return new RemoveEquivalenceResponse { success = 0 };
+            }
+            _ucOnlinePortalContext.Equivalences.Remove(checkIfExist);
+            _ucOnlinePortalContext.SaveChanges();
+
+            return new RemoveEquivalenceResponse { success = 1 };
+        }
+
+        public GetSubjectEquivalenceResponse GetSubjectEquivalence(GetSubjectEquivalenceRequest equivalenceRequest)
+        {
+            if (equivalenceRequest == null)
+                return new GetSubjectEquivalenceResponse { };
+
+            var subjects = (from subject in _ucOnlinePortalContext.SubjectInfos
+                            join equival in _ucOnlinePortalContext.Equivalences
+                            on subject.InternalCode equals equival.EquivalCode
+                           where equival.InternalCode == equivalenceRequest.internal_code
+                           select new GetSubjectEquivalenceResponse.Subjects
+                           { 
+                                internal_code = subject.InternalCode,
+                                subject_name = subject.SubjectName,
+                                descr_1 = subject.Descr1,
+                                descr_2 = subject.Descr2,
+                                units = subject.Units,
+                                year = (int)subject.YearLevel,
+                                semester = (int)subject.Semester,
+                                curr_year = (int)subject.CurriculumYear,
+                                subject_type = subject.SubjectType,
+                                split_code = subject.SplitCode,
+                                split_type = subject.SplitType
+                           }).ToList();
+
+
+            return new GetSubjectEquivalenceResponse { subjects = subjects };
         }
     }
 }

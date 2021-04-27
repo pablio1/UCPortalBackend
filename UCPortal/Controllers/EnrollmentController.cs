@@ -1384,6 +1384,96 @@ namespace UCPortal.Controllers
 
             return Ok(new RemoveRequisiteResponse { success = result.success });
         }
+        [HttpPost]
+        [Route("getequivalence")]
+        public async Task<IActionResult> GetEquivalence([FromBody] GetEquivalenceRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.GetEquivalenceRequest>(serialized_req);
 
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.GetEquivalence(converted_req));
+
+            var equivalences = result.equivalences.Select(x =>
+            {
+                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetEquivalenceResponse.Equivalence>(rSched);
+                return cSched;
+            }).ToList();
+
+            return Ok(new GetEquivalenceResponse { equivalences = equivalences });
+        }
+
+        [HttpPost]
+        [Route("searchsubject")]
+        public async Task<IActionResult> SearchSubjet([FromBody] SearchSubjectRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.SearchSubjectRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.SearchSubject(converted_req));
+
+            var subjects = result.subjects.Select(x =>
+            {
+                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<SearchSubjectResponse.Subjects>(rSched);
+                return cSched;
+            }).ToList();
+
+            return Ok(new SearchSubjectResponse { subjects = subjects });
+        }
+
+        [HttpPost]
+        [Route("curriculum/addequivalence")]
+        public async Task<IActionResult> AddEquivalence([FromBody] AddEquivalenceRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.AddEquivalenceRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.AddEquivalence(converted_req));
+
+
+            return Ok(new AddEquivalenceResponse { success = result.success });
+        }
+
+        [HttpPost]
+        [Route("curriculum/removeequivalence")]
+        public async Task<IActionResult> RemoveEquivalence([FromBody] AddEquivalenceRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.RemoveEquivalenceRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.RemoveEquivalence(converted_req));
+
+
+            return Ok(new RemoveEquivalenceResponse { success = result.success });
+        }
+
+        [HttpPost]
+        [Route("curriculum/subjectequivalence")]
+        public async Task<IActionResult> GetsubjectEquivalence([FromBody] GetSubjectEquivalenceRequest request)
+        {
+            //Convert response object to DTO Objects
+            var serialized_req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+            var converted_req = Newtonsoft.Json.JsonConvert.DeserializeObject<DTO.Request.GetSubjectEquivalenceRequest>(serialized_req);
+
+            //await result from function ChangePassword
+            var result = await Task.FromResult(_enrollmentManagement.GetSubjectEquivalence(converted_req));
+            var subjects = result.subjects.Select(x =>
+            {
+                var rSched = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+                var cSched = Newtonsoft.Json.JsonConvert.DeserializeObject<GetSubjectEquivalenceResponse.Subjects>(rSched);
+                return cSched;
+            }).ToList();
+
+            return Ok(new GetSubjectEquivalenceResponse { subjects = subjects });
+        }
     }
 }
